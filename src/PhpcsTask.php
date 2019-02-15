@@ -22,7 +22,7 @@ class PhpcsTask extends BaseTask implements BuilderAwareInterface {
    */
   public function run() {
     /** @var \Robo\Task\Base\ExecStack $e */
-    $e = $this->collectionBuilder()->taskExecStack();
+    $e = $this->collectionBuilder()->taskExecStack()->stopOnFail();
 
     $phpcs = $this->getConfigVal('phpcs.path', 'phpcs');
     if (!$files = $this->getConfigVal('phpcs.files', [])) {
@@ -47,7 +47,7 @@ class PhpcsTask extends BaseTask implements BuilderAwareInterface {
       $e->exec(implode(' ', $command));
     }
 
-    return $e->stopOnFail()->run();
+    return $e->run();
   }
 
 }
