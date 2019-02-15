@@ -47,9 +47,7 @@ class PhpcsTask extends BaseTask implements BuilderAwareInterface {
       $e->exec(implode(' ', $command));
     }
 
-    $e->run();
-
-    return new Result($this, ResultData::EXITCODE_OK);
+    return $e->run();
   }
 
 }
