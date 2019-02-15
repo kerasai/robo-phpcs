@@ -13,7 +13,7 @@ trait loadTasks {
    * @return \Kerasai\Robo\Phpcs\PhpcsTask
    *   The PHPCS task.
    */
-  protected function taskPhpCs() {
+  protected function taskPhpcs() {
     return $this->task(PhpcsTask::class);
   }
 

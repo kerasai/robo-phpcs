@@ -3,34 +3,28 @@
 namespace Kerasai\Robo\Phpcs;
 
 use Kerasai\Robo\Config\ConfigHelperTrait;
-use Robo\Common\BuilderAwareTrait;
-use Robo\Contract\BuilderAwareInterface;
 use Robo\Result;
 use Robo\ResultData;
-use Robo\Task\BaseTask;
+use Robo\Task\CommandStack;
 
 /**
  * Class PhpcsTask.
  */
-class PhpcsTask extends BaseTask implements BuilderAwareInterface {
+class PhpcsTask extends CommandStack {
 
-  use BuilderAwareTrait;
   use ConfigHelperTrait;
 
   /**
    * {@inheritdoc}
    */
   public function run() {
-    /** @var \Robo\Task\Base\ExecStack $e */
-    $e = $this->collectionBuilder()->taskExecStack()->stopOnFail();
-
     $phpcs = $this->getConfigVal('phpcs.path', 'phpcs');
     if (!$files = $this->getConfigVal('phpcs.files', [])) {
       return new Result($this, ResultData::EXITCODE_MISSING_OPTIONS, 'No phpcs.files configuration found.');
     }
 
     foreach ($files as $file => $options) {
-      $command = [$phpcs];
+      $command = [];
 
       if (!empty($options['standard'])) {
         $standard = escapeshellarg($options['standard']);
@@ -43,11 +37,11 @@ class PhpcsTask extends BaseTask implements BuilderAwareInterface {
       }
 
       $command[] = $file;
-
-      $e->exec(implode(' ', $command));
+      $this->executable($phpcs);
+      $this->exec($command);
     }
 
-    return $e->run();
+    return parent::run();
   }
 
 }

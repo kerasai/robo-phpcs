@@ -14,13 +14,14 @@ class RoboFile extends \Robo\Tasks {
    */
   public function test() {
     $this->testPhpcs();
+    $this->testPhpunit();
   }
 
   /**
    * PHPCS code style checks.
    */
   public function testPhpcs() {
-    $this->taskPhpCs()->run();
+    $this->taskPhpcs()->run();
   }
 
   /**
