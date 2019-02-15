@@ -21,7 +21,7 @@ class RoboFile extends \Robo\Tasks {
    * PHPCS code style checks.
    */
   public function testPhpcs() {
-    $this->taskPhpcs()->run();
+    $this->taskPhpcs()->stopOnFail()->run();
   }
 
   /**
