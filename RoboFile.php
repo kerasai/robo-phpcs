@@ -9,6 +9,10 @@ class RoboFile extends \Robo\Tasks {
 
   use \Kerasai\Robo\Phpcs\loadTasks;
 
+  public function __construct() {
+    $this->stopOnFail();
+  }
+
   /**
    * Run tests.
    */
@@ -21,7 +25,7 @@ class RoboFile extends \Robo\Tasks {
    * PHPCS code style checks.
    */
   public function testPhpcs() {
-    $this->taskPhpcs()->stopOnFail()->run();
+    $this->taskPhpcs()->run();
   }
 
   /**
