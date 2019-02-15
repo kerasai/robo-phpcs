@@ -1,0 +1,6 @@
+phpcs:
+  files:
+    src:
+      standard: Drupal
+    tests:
+      standard: Drupal

@@ -1,0 +1,34 @@
+{
+    "name": "kerasai/robo-phpcs",
+    "description": "PHPCS task for Robo PHP task runner.",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Will Long",
+            "email": "will@kerasai.com"
+        }
+    ],
+    "require": {
+        "consolidation/robo": "~1",
+        "kerasai/robo-config": "^0.0.1"
+    },
+    "require-dev": {
+        "drupal/coder": "^8.3",
+        "phpunit/phpunit": "^6.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Kerasai\\Robo\\Phpcs\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Kerasai\\Robo\\Phpcs\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "platform": {
+            "php": "7.0"
+        }
+    }
+}
