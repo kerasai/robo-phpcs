@@ -2,6 +2,6 @@ phpcs:
   path: vendor/bin/phpcs
   files:
     src:
-      standard: Drupal
+      standard: vendor/drupal/coder/coder_sniffer/Drupal
     tests:
-      standard: Drupal
+      standard: vendor/drupal/coder/coder_sniffer/Drupal
