@@ -1,4 +1,5 @@
 phpcs:
+  path: vendor/bin/phpcs
   files:
     src:
       standard: Drupal

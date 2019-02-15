@@ -9,6 +9,9 @@ class RoboFile extends \Robo\Tasks {
 
   use \Kerasai\Robo\Phpcs\loadTasks;
 
+  /**
+   * RoboFile constructor.
+   */
   public function __construct() {
     $this->stopOnFail();
   }
