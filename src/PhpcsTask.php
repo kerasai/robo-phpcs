@@ -36,6 +36,15 @@ class PhpcsTask extends CommandStack {
         $command[] = "--extensions=$extensions";
       }
 
+      if (!empty($options['ignore'])) {
+        $ignore = array_filter(array_map('trim', $options['ignore']));
+        if ($ignore) {
+          $ignore = implode(',', $ignore);
+          $ignore = escapeshellarg($ignore);
+          $command[] = "--extensions=$ignore";
+        }
+      }
+
       $command[] = $file;
       $this->executable($phpcs);
       $this->exec($command);
