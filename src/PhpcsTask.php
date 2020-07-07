@@ -23,8 +23,12 @@ class PhpcsTask extends CommandStack {
       return new Result($this, ResultData::EXITCODE_MISSING_OPTIONS, 'No phpcs.files configuration found.');
     }
 
-    foreach ($files as $file => $options) {
+    foreach ($files as $path => $options) {
       $command = [];
+
+      if (!empty($options['path'])) {
+        $path = $options['path'];
+      }
 
       if (!empty($options['standard'])) {
         $standard = escapeshellarg($options['standard']);
@@ -45,7 +49,7 @@ class PhpcsTask extends CommandStack {
         }
       }
 
-      $command[] = $file;
+      $command[] = $path;
       $this->executable($phpcs);
       $this->exec($command);
     }
