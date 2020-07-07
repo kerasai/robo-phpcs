@@ -21,6 +21,26 @@ phpcs:
       standard: vendor/drupal/coder/coder_sniffer/Drupal
     tests:
       standard: vendor/drupal/coder/coder_sniffer/Drupal
+    modules:
+      path: web/modules/custom
+      standard: vendor/drupal/coder/coder_sniffer/Drupal
+      extensions: 'php,module,inc,install,test,profile,theme,css,info,txt,md'
+      ignore: 'node_modules,bower_components,vendor'
+    themes:
+      path: web/themes/custom
+      standard: vendor/drupal/coder/coder_sniffer/Drupal
+      extensions: 'php,module,inc,install,test,profile,theme,css,info,txt,md'
+      ignore: 'node_modules,bower_components,vendor'
+    modules_practice:
+      path: web/modules/custom
+      standard: vendor/drupal/coder/coder_sniffer/DrupalPractice
+      extensions: 'php,module,inc,install,test,profile,theme,css,info,txt,md'
+      ignore: 'node_modules,bower_components,vendor'
+    themes_practice:
+      path: web/themes/custom
+      standard: vendor/drupal/coder/coder_sniffer/DrupalPractice
+      extensions: 'php,module,inc,install,test,profile,theme,css,info,txt,md'
+      ignore: 'node_modules,bower_components,vendor'
 ```
 
 ### Robofile.php:
@@ -40,4 +60,4 @@ class RoboFile {
   }
 
 }
-``` 
+```
