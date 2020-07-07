@@ -10,7 +10,7 @@
     ],
     "require": {
         "consolidation/robo": "~1 || ~2",
-        "kerasai/robo-config": "^1.0-alpha"
+        "kerasai/robo-config": "^1.0@alpha"
     },
     "require-dev": {
         "drupal/coder": "^8.3",
