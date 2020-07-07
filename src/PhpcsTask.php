@@ -49,7 +49,7 @@ class PhpcsTask extends CommandStack {
         if ($ignore) {
           $ignore = implode(',', $ignore);
           $ignore = escapeshellarg($ignore);
-          $command[] = "--extensions=$ignore";
+          $command[] = "--ignore=$ignore";
         }
       }
 
