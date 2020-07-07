@@ -36,21 +36,13 @@ class PhpcsTask extends CommandStack {
       }
 
       if (!empty($options['extensions'])) {
-        $extensions = array_filter(array_map('trim', $options['extensions']));
-        if ($extensions) {
-          $extensions = implode(',', $extensions);
-          $extensions = escapeshellarg($extensions);
-          $command[] = "--extensions=$extensions";
-        }
+        $extensions = escapeshellarg($options['extensions']);
+        $command[] = "--extensions=$extensions";
       }
 
       if (!empty($options['ignore'])) {
-        $ignore = array_filter(array_map('trim', $options['ignore']));
-        if ($ignore) {
-          $ignore = implode(',', $ignore);
-          $ignore = escapeshellarg($ignore);
-          $command[] = "--ignore=$ignore";
-        }
+        $ignore = escapeshellarg($options['ignore']);
+        $command[] = "--ignore=$ignore";
       }
 
       $command[] = $path;
