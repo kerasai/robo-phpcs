@@ -9,7 +9,7 @@
         }
     ],
     "require": {
-        "consolidation/robo": "~1 || ~2",
+        "consolidation/robo": "~1 || ~2 || ~3",
         "kerasai/robo-config": "^1.0@alpha"
     },
     "require-dev": {
