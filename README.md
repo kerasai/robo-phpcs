@@ -4,7 +4,11 @@
 
 ## Installation
 
-> composer require kerasai/robo-phpcs
+> composer require --dev kerasai/robo-phpcs
+
+You'll also want standards to apply. For the example configruation below:
+
+> composer require --dev drupal/coder
 
 ## Usage
 
@@ -53,7 +57,7 @@ class RoboFile {
   use \Kerasai\Robo\Phpcs\loadTasks;
 
   /**
-   * PHPCS code style checks.
+   * PHPCS code style checks
    */
   public function testPhpcs() {
     $this->taskPhpcs()->run();
