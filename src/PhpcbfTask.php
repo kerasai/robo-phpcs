@@ -8,15 +8,15 @@ use Robo\ResultData;
 use Robo\Task\CommandStack;
 
 /**
- * Class PhpcsTask.
+ * Class PhpcbfTask.
  */
-class PhpcsTask extends CommandStack {
+class PhpcbfTask extends CommandStack {
 
   use ConfigHelperTrait;
 
-  const PATH_CONFIG_NAME = 'phpcs.path';
+  const PATH_CONFIG_NAME = 'phpcs.phpcbf_path';
 
-  const PATH_CONFIG_DEFAULT = 'phpcs';
+  const PATH_CONFIG_DEFAULT = 'phpcbf';
 
   /**
    * {@inheritdoc}
