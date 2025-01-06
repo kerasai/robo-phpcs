@@ -9,7 +9,7 @@
         }
     ],
     "require": {
-        "consolidation/robo": "~1 || ~2 || ~3 || ~4",
+        "consolidation/robo": "~3 || ~4 || ~5",
         "kerasai/robo-config": "^1.0"
     },
     "require-dev": {
@@ -24,11 +24,6 @@
     "autoload-dev": {
         "psr-4": {
             "Kerasai\\Robo\\Phpcs\\Tests\\": "tests/"
-        }
-    },
-    "config": {
-        "platform": {
-            "php": "7.0"
         }
     }
 }
